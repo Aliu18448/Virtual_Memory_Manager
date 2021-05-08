@@ -123,8 +123,8 @@ unsigned getframe_fifo(FILE* fstore, unsigned logic_add, unsigned page,
          int *page_fault_count, int *tlb_hit_count) {
     int physic_add;
   // tlb hit
-  int found = tlb_contains(page);
-  if(found == page) {
+  int found = tlb_contains(logic_add);
+  if(found == logic_add) {
     printf("TLB HIT\n");
     ++(*tlb_hit_count);
     return current_frame;
